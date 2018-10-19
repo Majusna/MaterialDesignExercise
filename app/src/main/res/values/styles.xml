@@ -6,6 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name ="android:popupMenuStyle">@style/AppTheme.Base.PopupMenu</item>
+    </style>
+
+    <style name="AppTheme.Base.PopupMenu" parent="@android:style/Widget.PopupMenu">
+        <!-- Customize your theme here. -->
+        <item name="android:popupBackground">@color/colorToolbarBackground</item>
+
     </style>
 
 </resources>
