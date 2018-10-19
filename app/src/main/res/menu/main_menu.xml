@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-   >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+  >
 
+    <item
+        android:id="@+id/action_star"
+        android:title="@string/star_it_menu"
+        android:icon="@drawable/star"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_like"
+        android:title="like it"
+        android:icon="@drawable/duck"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/item1_id"
@@ -14,4 +26,6 @@
     <item
         android:id="@+id/item3_id"
         android:title="@string/item3_menu"/>
+
+
 </menu>

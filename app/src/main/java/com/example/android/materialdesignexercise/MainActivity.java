@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         ImageView imageHolder = findViewById(R.id.image_holder);
@@ -48,6 +49,18 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "item two", Toast.LENGTH_SHORT).show();
 
         }
+        else if (id== R.id.action_like){
+            Toast.makeText(this, "like", Toast.LENGTH_SHORT).show();
+
+        }
+        else if (id== R.id.action_star){
+            Toast.makeText(this, "star", Toast.LENGTH_SHORT).show();
+
+        }
+        else if (id==android.R.id.home){
+        Toast.makeText(this, "home", Toast.LENGTH_SHORT).show();
+
+    }
         else {
             Toast.makeText(this, "item boli me grlo", Toast.LENGTH_SHORT).show();
 
