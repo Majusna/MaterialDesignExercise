@@ -38,7 +38,7 @@
 
             <item
                 android:title="delete"
-                android:id="@+id/delete_id"
+                android:id="@+id/trash_id"
                 android:icon="@drawable/delete"/>
 
             <item
