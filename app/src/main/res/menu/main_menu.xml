@@ -12,7 +12,7 @@
     <item
         android:id="@+id/action_like"
         android:title="like it"
-        android:icon="@drawable/duck"
+        android:icon="@drawable/email"
         app:showAsAction="always" />
 
     <item

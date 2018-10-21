@@ -7,7 +7,7 @@
     android:padding="16dp"
     android:gravity="bottom"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:background="@drawable/peony"
+    android:background="@drawable/small"
     android:scaleType="centerCrop">
 
     <ImageView
