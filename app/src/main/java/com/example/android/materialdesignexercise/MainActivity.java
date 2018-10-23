@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v4.view.GravityCompat;
@@ -20,7 +21,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     android.support.v7.widget.Toolbar mToolbar;
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     AppCompatEditText usernameEdit;
     AppCompatEditText passEdit;
     LinearLayout linearLayout;
+    TextInputLayout inputLayout;
 
 
     @Override
@@ -60,6 +61,53 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         linearLayout = findViewById(R.id.activity_main_linear);
         linearLayout.setOnClickListener(null);
+
+        /////////////////////// TextInputLayout/////////////////////
+
+        usernameEdit = findViewById(R.id.username_text_feild);
+        inputLayout = findViewById(R.id.username_input_layout);
+
+        usernameEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View view, boolean b) {
+
+                if(usernameEdit.getText().toString().isEmpty()){
+                    inputLayout.setErrorEnabled(true);
+                    inputLayout.setError("please enter your name");
+
+                }else{
+                    inputLayout.setErrorEnabled(false);
+
+                }
+                }
+        });
+
+        usernameEdit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(usernameEdit.getText().toString().isEmpty()){
+                    inputLayout.setErrorEnabled(true);
+                    inputLayout.setError("please enter your name");
+
+                }else{
+                    inputLayout.setErrorEnabled(false);
+
+                }
+
+            }
+        });
 
 
     }
