@@ -11,8 +11,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatEditText;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -21,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     android.support.v7.widget.Toolbar mToolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
+    AppCompatEditText usernameEdit;
+    AppCompatEditText passEdit;
 
 
     @Override
@@ -48,7 +55,50 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         RoundedBitmapDrawable roundDrawable = RoundedBitmapDrawableFactory.create(getResources(),bitmap);
         roundDrawable.setCircular(true);
         imageHolder.setImageDrawable(roundDrawable);
+
+
+        ///////////////////////////AppCompatEditText//////////////////////
+
+        usernameEdit = findViewById(R.id.username_text_feild);
+        passEdit = findViewById(R.id.password_text_feild);
+
+
+
+        usernameEdit.addTextChangedListener(new TextWatcher() {
+            @Override
+            // npr belezi slovo @charSequence, ali tek nakon kucanja narednog slova (poslednje slovo ne izbacuje)
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                System.out.println(charSequence);
+
+            }
+            // npr belezi slovo @charSequence, cim se otkuca
+            //!!! razilka izmedju @onTextChanged i @afterTextChanged , koriscenjem prvog, moze da se izdvoji
+            //vrednost otkucanog karaktera (@charSequence) i iskoristi u kodu. u drugom metodu to ne moze;
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+            // izvrsava zadatak posto se tekst promeni
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        // osluskuje da li je fokus na view-u
+        passEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+
+                System.out.println(hasFocus);
+                }
+        });
     }
+
+
+
+
 
     @Override
     public void onBackPressed() {
