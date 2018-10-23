@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     AppCompatEditText passEdit;
     LinearLayout linearLayout;
     TextInputLayout inputLayout;
+    TextInputLayout passLayout;
 
 
     @Override
@@ -64,50 +65,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         /////////////////////// TextInputLayout/////////////////////
 
-        usernameEdit = findViewById(R.id.username_text_feild);
-        inputLayout = findViewById(R.id.username_input_layout);
+        passEdit = findViewById(R.id.password_text_feild);
+        passLayout = findViewById(R.id.password_input_layout);
 
-        usernameEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-
-            @Override
-            public void onFocusChange(View view, boolean b) {
-
-                if(usernameEdit.getText().toString().isEmpty()){
-                    inputLayout.setErrorEnabled(true);
-                    inputLayout.setError("please enter your name");
-
-                }else{
-                    inputLayout.setErrorEnabled(false);
-
-                }
-                }
-        });
-
-        usernameEdit.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        passLayout.setCounterEnabled(true);
+        passLayout.setCounterMaxLength(8);
 
 
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                if(usernameEdit.getText().toString().isEmpty()){
-                    inputLayout.setErrorEnabled(true);
-                    inputLayout.setError("please enter your name");
-
-                }else{
-                    inputLayout.setErrorEnabled(false);
-
-                }
-
-            }
-        });
 
 
     }

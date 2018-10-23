@@ -15,5 +15,14 @@
 
     </style>
 
+    <style name="CharacterOverflow" >
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/colorError</item>
+
+    </style>
+
+
+
+
 
 </resources>
